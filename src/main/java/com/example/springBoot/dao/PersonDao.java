@@ -2,6 +2,8 @@ package com.example.springBoot.dao;
 
 import com.example.springBoot.model.Person;
 
+import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 public interface PersonDao {
@@ -12,4 +14,13 @@ public interface PersonDao {
         UUID id = UUID.randomUUID();
         return  insertPerson(id, person);
     }
+
+    List<Person> selectAllPeople();
+
+    Optional<Person> selectPersonById(UUID id, Person person);
+
+    int deletePersonById(UUID id);
+
+    int updatePersonById(UUID id);
+
 }
